@@ -26,6 +26,8 @@ var defaultConfig = {
     header: 'authorization',
     exclude: [],
     error: new Error('Unauthorized'),
+    userIdField: 'userId',
+    userIdRequired: true,
     store: {
         db: 'test',
         host: 'localhost',
@@ -61,7 +63,9 @@ exports.setup = function (options, callback) {
         req.authorize = new Authorize(req, res, {
             header: options.header,
             secret: options.secret,
-            store: authStore
+            store: authStore,
+            userIdField: options.userIdField,
+            userIdRequired: options.userIdRequired
         });
 
         if (options.exclude.indexOf(req.path) !== -1) {
