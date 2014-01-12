@@ -164,6 +164,7 @@ describe('Tests for express auth', function () {
                     }
                 }
             };
+
             var middleware = expressAuth.setup(config, function (err) {
                 expect(!err).to.be.ok();
                 middleware(req, res, function (err) {
