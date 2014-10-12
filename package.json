@@ -1,6 +1,6 @@
 {
   "name": "express-auth",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An express middleware for auth using header",
   "main": "./express-auth.js",
   "scripts": {
